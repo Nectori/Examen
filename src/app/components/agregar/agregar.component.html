@@ -1,0 +1,36 @@
+<h1 class="main-container">
+
+    Registros
+
+
+    <hr>
+    <button (click)="showModal = true" type="button" class="btn btn-primary">Agregar Registros</button>
+
+    <app-login *ngIf="showModal" (cerrar)="showModal = false"></app-login>
+
+</h1>
+<hr>
+<div class="col animated fadeIn fast" *ngFor="let registro of registros; let i = index">
+
+
+
+    <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">Cliente: {{registro.Cliente}}</h5>
+                    <p class="card-text">Fecha: {{registro.Fecha}}</p>
+                    <p class="card-text">Codigo: {{registro.Codigo}}</p>
+                    <p class="card-text">Telefono: {{registro.Telefono}}</p>
+
+                    <button (click)="verRegistros(i)" type="button" class="btn btn-primary">Ver Registro</button>
+                    <button (click)="eliminar(i)" type="button" class="btn btn-danger float-left">Eliminar Registro</button>
+                    <br>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
